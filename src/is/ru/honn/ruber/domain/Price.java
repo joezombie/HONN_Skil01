@@ -4,15 +4,15 @@ package is.ru.honn.ruber.domain;
  * Created by Johannes Gunnar Heidarsson on 5.9.2014.
  */
 public class Price {
-    protected String productPrice;
+    protected String productId;
     protected String currencyCode;
     protected String displayName;
     protected Integer lowEstimate;
     protected Integer highEstimate;
     protected Double surgeMultiplier;
 
-    public Price (String productPrice, String currencyCode, String displayName, Integer lowEstimate, Integer highEstimate, Double surgeMultiplier){
-        this.productPrice = productPrice;
+    public Price (String productId, String currencyCode, String displayName, Integer lowEstimate, Integer highEstimate, Double surgeMultiplier){
+        this.productId = productId;
         this.currencyCode = currencyCode;
         this.displayName = displayName;
         this.lowEstimate = lowEstimate;
@@ -20,11 +20,11 @@ public class Price {
         this.surgeMultiplier = surgeMultiplier;
     }
 
-    public String getProductPrice() {
-        return productPrice;
+    public String getProductId() {
+        return productId;
     }
-    public void setProductPrice(String productPrice) {
-        this.productPrice = productPrice;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public String getCurrencyCode() {
@@ -71,7 +71,7 @@ public class Price {
         String NEW_LINE = System.getProperty("line.separator");
 
         result.append(this.getClass().getName() + " Object{" + NEW_LINE);
-        result.append(" productPrice: " + this.productPrice + NEW_LINE);
+        result.append(" productId: " + this.productId + NEW_LINE);
         result.append(" currencyCode: " + this.currencyCode + NEW_LINE);
         result.append(" displayNAme: " + this.displayName + NEW_LINE);
         result.append(" lowEstimate: " + this.lowEstimate + NEW_LINE);

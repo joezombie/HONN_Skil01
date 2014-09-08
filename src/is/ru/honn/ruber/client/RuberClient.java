@@ -1,6 +1,7 @@
 package is.ru.honn.ruber.client;
 
 import is.ru.honn.ruber.domain.Price;
+import is.ru.honn.ruber.rest.JSonPrice;
 import is.ru.honn.ruber.service.RuberService;
 import is.ru.honn.ruber.service.RuberServiceStub;
 import is.ru.honn.ruber.domain.Product;
@@ -22,6 +23,11 @@ public class RuberClient {
             for (Price p : service.getPriceEstimates(0.0, 0.0, 0.0, 0.0)) {
                 System.out.println(p.toString());
             }
+
+            System.out.println("JSON--");
+            System.out.print(JSonPrice.priceListToJSON(service.getPriceEstimates(0.0, 0.0, 0.0, 0.0)) + "\n");
+            System.out.println("JSON---");
+
         } catch (ServiceException e) {
             System.out.println(e.toString());
         }
@@ -35,5 +41,9 @@ public class RuberClient {
         }
 
         System.out.println(Registry.getServiceClassName());
+
+
+
+
     }
 }
